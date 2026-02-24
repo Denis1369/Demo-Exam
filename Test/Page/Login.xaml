@@ -1,0 +1,19 @@
+﻿<Window x:Class="Test.Page.Login"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Test.Page"
+        mc:Ignorable="d" Icon="/Data/Icon.ico"
+        Title="Авторизиция" Height="300" Width="400" ResizeMode="NoResize">
+    <Grid>
+        <Label Content="Логин: " HorizontalAlignment="Left" Margin="113,104,0,0" VerticalAlignment="Top"/>
+        <Label Content="Пароль: " HorizontalAlignment="Left" Margin="108,143,0,0" VerticalAlignment="Top"/>
+        <TextBox FontSize="18" x:Name="LoginText" HorizontalAlignment="Left" Margin="185,111,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox FontSize="18" x:Name="PassText" HorizontalAlignment="Left" Margin="190,151,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="LoginButtton" Content="Войти" HorizontalAlignment="Left" Margin="208,194,0,0" VerticalAlignment="Top" Click="LoginButtton_Click" Background="MediumSpringGreen"/>
+        <Button x:Name="GeustButton" Content="Гость" HorizontalAlignment="Left" Margin="210,229,0,0" VerticalAlignment="Top" Click="GeustButton_Click" Background="Chartreuse"/>
+        <Image HorizontalAlignment="Left" Source="/Data/Icon.ico" Height="75" Margin="180,19,0,0" VerticalAlignment="Top" Width="75"/>
+
+    </Grid>
+</Window>

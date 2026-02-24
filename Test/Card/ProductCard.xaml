@@ -1,0 +1,45 @@
+﻿<UserControl x:Class="Test.Card.ProductCard"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Test.Card"
+             mc:Ignorable="d" 
+             d:DesignHeight="200" d:DesignWidth="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="200"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Image Source="{Binding CardPhoto}" Grid.RowSpan="10"/>
+
+        <Label Grid.Column="1" Grid.Row="0" Content="{Binding MaxTitle}"/>
+        <Label Grid.Column="1" Grid.Row="1" Content="{Binding CardTitle}"/>
+        <Label Grid.Column="1" Grid.Row="2" Content="{Binding CardManufacturer}"/>
+        <Label Grid.Column="1" Grid.Row="3" Content="{Binding CardSupplier}"/>
+        <StackPanel Grid.Column="1" Grid.Row="4" Orientation="Horizontal">
+            <Label Content="Цена: "/>
+            <TextBlock VerticalAlignment="Center"  x:Name="TextPrice" Text="{Binding Price}" Foreground="Red"/>
+            <Label Content="{Binding CadrPrice}"/>
+        </StackPanel>
+        <Label Grid.Column="1" Grid.Row="5" Content="{Binding CardUnit}"/>
+        <Label x:Name="CountLable" Grid.Column="1" Grid.Row="6" Content="{Binding CardCount}"/>
+
+        <Rectangle x:Name="DicountColor" Grid.Column="2" Grid.RowSpan="10" HorizontalAlignment="Center" VerticalAlignment="Center" Width="80" Height="80"/>
+        <Label x:Name="DicountLable" Grid.Column="2" Grid.RowSpan="10" Content="{Binding Discount}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+
+    </Grid>
+</UserControl>

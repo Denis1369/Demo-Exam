@@ -1,0 +1,63 @@
+﻿<Window x:Class="Test.Page.AddOrModOrder"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Test.Page"
+        mc:Ignorable="d"
+        Title="" Height="450" Width="800" Background="Chartreuse">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition/>
+            <RowDefinition Height="40"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Label Content="Дата доставки:"/>
+            <DatePicker Margin="10,0,0,0" x:Name="DateOreder"/>
+
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Label Content="Точка доствки:"/>
+            <ComboBox Margin="10,0,0,0" Name="DelirivyCombobox" Width="200" Height="30" SelectedIndex="0"/>
+
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Label Content="Статус:"/>
+            <ComboBox Margin="10,0,0,0" Name="StausCombobox" DropDownClosed="StausCombobox_DropDownClosed" SelectedIndex="0" Width="200" Height="30"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Vertical" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Button x:Name="AddButton" Click="AddButton_Click"/>
+            <Button Margin="0,10,0,0" x:Name="BackButton" Content="Назад" Click="BackButton_Click"/>
+        </StackPanel>
+
+        <StackPanel x:Name="ProdStackPanel" Orientation="Horizontal" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Label Content="Товар:"/>
+            <ComboBox Margin="10,0,0,0" Name="ProductCombobox" SelectedIndex="0" Width="200" Height="30"/>
+        </StackPanel>
+        <StackPanel x:Name="CouStackPanel" Orientation="Horizontal" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Label Content="Количество:"/>
+            <TextBox Width="100" x:Name="CountText"/>
+        </StackPanel>
+
+        <StackPanel x:Name="ButStackPanel" Orientation="Horizontal" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Button x:Name="AddItem" Content="Добавить в корзину" Click="AddItem_Click"/>
+            <Button x:Name="DelItem" Content="Удалить выбранное" Margin="10,0,0,0" Click="DelItem_Click"/>
+        </StackPanel>
+
+        <ListBox Grid.Row="3" Grid.Column="1" x:Name="ItemList"/>
+        
+
+
+    </Grid>
+</Window>

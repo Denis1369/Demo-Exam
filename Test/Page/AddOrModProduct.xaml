@@ -1,0 +1,120 @@
+﻿<Window x:Class="Test.Page.AddOrModProduct"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Test.Page"
+        mc:Ignorable="d" Icon="/Data/Icon.ico"
+        Title="С" MinHeight="650" MinWidth="800" Background="Chartreuse">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Image VerticalAlignment="Center" HorizontalAlignment="Left" Grid.ColumnSpan="2" Grid.Row="0" Margin="10,0,0,0" Source="/Data/Icon.png"/>
+        <Label VerticalAlignment="Center" HorizontalAlignment="Center" Grid.ColumnSpan="2" Grid.Row="0" Content="«Обувь»" FontSize="30"/>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Right" Grid.ColumnSpan="2" VerticalAlignment="Center" Margin="0,0,30,0">
+            <Label x:Name="NameLable" FontSize="25"/>
+            <Button Margin="30,0,0,0" x:Name="BackButton" Width="60" Height="30" Content="Назад" FontSize="30" Background="MediumSpringGreen" Click="BackButton_Click"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="50,20,0,20" VerticalAlignment="Center"
+            Grid.Column="0" Grid.Row="1">
+            <Label Content="Описание:"/>
+            <TextBox x:Name="TitleTextBox" Margin="20,0,0,0" Width="150"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="50,20,0,20" VerticalAlignment="Center"
+            Grid.Column="0" Grid.Row="2">
+            <Label Content="Единицы измерения: "/>
+            <TextBox x:Name="UnitTextBox" Margin="20,0,0,0" Width="150"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="50,20,0,20" VerticalAlignment="Center"
+            Grid.Column="0" Grid.Row="3">
+            <Label Content="Цена: "/>
+            <TextBox x:Name="PriceTextBox" Margin="20,0,0,0" Width="150"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="50,20,0,20" VerticalAlignment="Center"
+            Grid.Column="0" Grid.Row="4">
+            <Label Content="Скидка: "/>
+            <TextBox x:Name="DiscountTextBox" Margin="20,0,0,0" Width="150"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="50,20,0,20" VerticalAlignment="Center"
+            Grid.Column="0" Grid.Row="5">
+            <Label Content="Количество: "/>
+            <TextBox x:Name="CountTextBox" Margin="20,0,0,0" Width="150"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="50,20,0,20" VerticalAlignment="Center"
+            Grid.Column="1" Grid.Row="5">
+            <Label Content="Фото: " VerticalAlignment="Center"/>
+            <Button x:Name="PhotoButton" Content="Добавить"
+            VerticalAlignment="Center"
+            Click="PhotoButton_Click"
+            Margin="20,0,0,0"
+            Width="150"/>
+            <Image x:Name="PhotoImage"
+           Source="{Binding Photo}"
+           Margin="20,0,0,0"
+           Width="100"
+           Height="100"/>
+        </StackPanel>
+
+        <StackPanel x:Name="IdStackPanel" Orientation="Horizontal"
+            HorizontalAlignment="Left"
+            Margin="50,20,0,20"
+            VerticalAlignment="Center"
+            Grid.Column="0"
+            Grid.Row="6">
+            <Label Content="Код: "/>
+            <TextBox x:Name="IdTextBox" Margin="20,0,0,0" Width="150"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="50,20,0,20" VerticalAlignment="Center"
+            Grid.Column="1" Grid.Row="1">
+            <Label Content="Наименование товара: "/>
+            <ComboBox x:Name="TypeBootsComboBox" Margin="20,0,0,0" Width="150" SelectedIndex="0"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="50,20,0,20" VerticalAlignment="Center"
+            Grid.Column="1" Grid.Row="2">
+            <Label Content="Производитель: "/>
+            <ComboBox x:Name="ManufacturerComboBox" Margin="20,0,0,0" Width="150" SelectedIndex="0"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="50,20,0,20" VerticalAlignment="Center"
+            Grid.Column="1" Grid.Row="3">
+            <Label Content="Категория товара: "/>
+            <ComboBox x:Name="TypeProductComboBox" Margin="20,0,0,0" Width="150" SelectedIndex="0"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="50,20,0,20" VerticalAlignment="Center"
+            Grid.Column="1" Grid.Row="4">
+            <Label Content="Поставщик: "/>
+            <ComboBox x:Name="SupplierComboBox" Margin="20,0,0,0" Width="150" SelectedIndex="0"/>
+        </StackPanel>
+
+        <Button x:Name="AddButton"
+        Grid.Column="1"
+        Grid.Row="6"
+        Background="MediumSpringGreen"
+        HorizontalAlignment="Center"
+        VerticalAlignment="Center"
+        Click="AddButton_Click"/>
+
+    </Grid>
+</Window>
