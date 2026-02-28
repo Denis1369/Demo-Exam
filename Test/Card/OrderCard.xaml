@@ -19,16 +19,16 @@
                         VerticalAlignment="Top" Margin="10" Click="OrderButton_Click"/>
 
                 <Label Content="{Binding OrdersId}" HorizontalAlignment="Left" 
-                        VerticalAlignment="Top" Margin="10"/>
+                        VerticalAlignment="Top" Margin="10,0,0,0"/>
 
                 <Label Content="{Binding Status}" HorizontalAlignment="Left" 
-                        VerticalAlignment="Top" Margin="10"/>
+                        VerticalAlignment="Top" Margin="10,0,0,0"/>
 
                 <Label Content="{Binding DeliviryPoint.TitleAll}" HorizontalAlignment="Left" 
-        VerticalAlignment="Top" Margin="10"/>
+        VerticalAlignment="Top" Margin="10,0,0,0"/>
 
                 <Label Content="{Binding DateOrderS}" HorizontalAlignment="Left" 
-        VerticalAlignment="Top" Margin="10"/>
+        VerticalAlignment="Top" Margin="10,0,0,0"/>
 
             </StackPanel>
         </Border>

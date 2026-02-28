@@ -107,7 +107,7 @@ namespace Test.Page
 
             if (DateOreder.SelectedDate == null)
             {
-                MessageBox.Show("Выберете дату доставки");
+                MessageBox.Show("Выберете дату доставки", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
 
@@ -150,7 +150,7 @@ namespace Test.Page
                 }
 
                 con.SaveChanges();
-                MessageBox.Show("Заказ создан");
+                MessageBox.Show("Заказ создан", "Успех", MessageBoxButton.OK, MessageBoxImage.Information);
             }
             else
             {

@@ -23,17 +23,17 @@
             <Button Margin="30,0,0,0" x:Name="OredrButton" Width="70" Height="30" Content="Заказы" FontSize="30" Background="Chartreuse" Click="OredrButton_Click" />
         </StackPanel>
 
-        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="30,0,0,0">
+        <StackPanel x:Name="FilStack" Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="30,0,0,0">
             <Label Content="Фильтрация: "/>
             <ComboBox x:Name="FilterComboBox" DropDownClosed="FilterComboBox_DropDownClosed" SelectedIndex="0"/>
         </StackPanel>
 
-        <StackPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal">
+        <StackPanel x:Name="FindStack" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal">
             <Label Content="Поиск: "/>
             <TextBox TextChanged="SerchTextBox_TextChanged" x:Name="SerchTextBox" Width="200"/>
         </StackPanel>
 
-        <StackPanel Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="Center" Orientation="Horizontal">
+        <StackPanel x:Name="SortStack" Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="Center" Orientation="Horizontal">
             <Label Content="Сортировка: "/>
             <ComboBox DropDownClosed="SortComboBox_DropDownClosed" x:Name="SortComboBox" Margin="0,0,30,0" SelectedIndex="0"/>
         </StackPanel>

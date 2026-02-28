@@ -28,6 +28,11 @@ namespace Test
             InitializeComponent();
             Load();
             ProductList.ContextMenu = null;
+            OredrButton.Visibility = Visibility.Collapsed;
+            AddButton.Visibility = Visibility.Collapsed;
+            FindStack.Visibility = Visibility.Collapsed;
+            FilStack.Visibility = Visibility.Collapsed;
+            SortStack.Visibility = Visibility.Collapsed;
         }
 
         public MainWindow(Person user)
@@ -35,9 +40,20 @@ namespace Test
             InitializeComponent();
             Load();
             NameLable.Content = user.LastName + " " + user.Name;
-            if(user.TypeRole.Title != "Администратор")
+            if (user.TypeRole.Title == "Менеджер")
+            {
                 ProductList.ContextMenu = null;
-
+                AddButton.Visibility = Visibility.Collapsed;
+            }
+            if (user.TypeRole.Title == "Авторизированный клиент")
+            {
+                ProductList.ContextMenu = null;
+                OredrButton.Visibility = Visibility.Collapsed;
+                AddButton.Visibility = Visibility.Collapsed;
+                FindStack.Visibility = Visibility.Collapsed;
+                FilStack.Visibility = Visibility.Collapsed;
+                SortStack.Visibility = Visibility.Collapsed;
+            }
             User = user;
         }
 
@@ -90,7 +106,7 @@ namespace Test
 
             try
             {
-                var r = MessageBox.Show("Точно удалить?", "", MessageBoxButton.YesNo);
+                var r = MessageBox.Show("Точно удалить?", "Удаление", MessageBoxButton.YesNo, MessageBoxImage.Warning);
 
                 if (r == MessageBoxResult.Yes) 
                 {

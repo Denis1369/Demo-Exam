@@ -33,6 +33,7 @@ namespace Test.Page
             Title = "Создание";
             Load();
 
+
             AddButton.Content = "Создать";
 
             string l = "QWERTYUIOPASDFGHJKLZXCVBNM1234567890";
@@ -82,6 +83,7 @@ namespace Test.Page
 
         public void Load() 
         {
+            IdStackPanel.Visibility = Visibility.Collapsed;
             var con = new DemoKrosContext();
             foreach (var item in con.TypeBoots.ToList()) 
             {
