@@ -26,8 +26,8 @@ public partial class Order
 
     public virtual Person? Person { get; set; }
 
-    public string DateOrderS => (DateOrder.Value.Day + "-" + DateOrder.Value.Month + "-" + DateOrder.Value.Year).ToString();
+    public string DateOrderS => (DateOrder.Value.Day + "." + DateOrder.Value.Month + "." + DateOrder.Value.Year).ToString();
 
-    public string DateDeliviryS => (DateDeliviry.Value.Day+"-" + DateDeliviry.Value.Month + "-" 
+    public string DateDeliviryS => (DateDeliviry.Value.Day+"." + DateDeliviry.Value.Month + "." 
         + DateDeliviry.Value.Year).ToString();
 }

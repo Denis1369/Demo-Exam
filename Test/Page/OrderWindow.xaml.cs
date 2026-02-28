@@ -28,6 +28,13 @@ namespace Test.Page
         {
             InitializeComponent();
             Person = person;
+
+            if (person.TypeRoleId == 3) 
+            {
+                OrderList.ContextMenu = new ContextMenu();
+                AddButton.Visibility = Visibility.Collapsed;
+            }
+
             Load();
         }
 
@@ -77,6 +84,13 @@ namespace Test.Page
                 var i = OrderList.SelectedItem as OrderCard;
                 var it = i.DataContext as Order;
 
+                if (it.Status == "Завершён")
+                {
+                    MessageBox.Show("Заказ завершен невозможно удалить", "Информация", MessageBoxButton.OK, MessageBoxImage.Information);
+                    return;
+                }
+
+
                 var li = con.OredersItems.Where(i=>i.OrdersId == it.OrdersId);
                 foreach (var item in li) 
                 {
@@ -89,6 +103,12 @@ namespace Test.Page
 
                 Load();
             }
+        }
+
+        private void BackButton_Click(object sender, RoutedEventArgs e)
+        {
+            new MainWindow(Person).Show();
+            Close();
         }
     }
 }

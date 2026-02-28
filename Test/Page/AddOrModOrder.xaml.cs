@@ -203,9 +203,20 @@ namespace Test.Page
 
             var existingItem = oredersItems.FirstOrDefault(i => i.ProductId == product.ProductId);
 
+
             if (existingItem != null)
             {
-                existingItem.Count += count;
+                var i = con.Products.FirstOrDefault(it=> it.ProductId == existingItem.ProductId);
+
+                int count_sum = count + (int)existingItem.Count;
+                
+                if (count_sum > i.Count) 
+                {
+                    MessageBox.Show("Товара меньше на складе","Уведомление"
+                        ,MessageBoxButton.OK,MessageBoxImage.Warning);
+                    return;
+                }
+                existingItem.Count = count_sum;
             }
             else
             {
@@ -214,6 +225,15 @@ namespace Test.Page
                     ProductId = product.ProductId,
                     Count = count,
                 };
+
+                var i = con.Products.FirstOrDefault(it => it.ProductId == item.ProductId);
+
+                if (item.Count > i.Count)
+                {
+                    MessageBox.Show("Товара меньше на складе", "Уведомление"
+                        , MessageBoxButton.OK, MessageBoxImage.Warning);
+                    return;
+                }
 
                 oredersItems.Add(item);
             }

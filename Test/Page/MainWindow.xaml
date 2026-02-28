@@ -19,7 +19,7 @@
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,30,0">
             <Label x:Name="NameLable" FontSize="25"/>
             <Button Margin="30,0,0,0" x:Name="BackButton" Width="60" Height="30" Content="Назад" FontSize="30" Background="Chartreuse" Click="BackButton_Click"/>
-            <Button Margin="30,0,0,0" x:Name="AddButton" Width="70" Height="30" Content="Создать" FontSize="30" Background="Chartreuse" Click="AddButton_Click"/>
+            <Button Margin="30,0,0,0" x:Name="AddButton" Width="170" Height="30" Content="Создать товар" FontSize="30" Background="Chartreuse" Click="AddButton_Click"/>
             <Button Margin="30,0,0,0" x:Name="OredrButton" Width="70" Height="30" Content="Заказы" FontSize="30" Background="Chartreuse" Click="OredrButton_Click" />
         </StackPanel>
 

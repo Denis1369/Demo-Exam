@@ -114,7 +114,7 @@ namespace Test.Page
 
                 var a = new BitmapImage(new Uri(op.FileName));
 
-                if (a.Width > 320 || a.Height > 300) 
+                if (a.Width > 300 || a.Height > 200) 
                 {
                     MessageBox.Show("Размер изображения не должен превышать 300x300 пикселей",
                        "Ошибка",
@@ -221,6 +221,7 @@ namespace Test.Page
 
                 con.SaveChanges();
 
+                MessageBox.Show("Товар успешно сохранён!", "Успех", MessageBoxButton.OK, MessageBoxImage.Information);
             }
 
             new MainWindow().Show();

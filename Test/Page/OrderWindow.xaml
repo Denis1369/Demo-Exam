@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Test.Page"
         mc:Ignorable="d"
-        Title="OrderWindow" Height="450" Width="800">
+        Title="Заказы" Height="450" Width="800" Icon="/Data/Icon.ico">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="70"/>
@@ -19,9 +19,10 @@
             <Label x:Name="NameLable" FontSize="25"/>
             <Button Margin="30,0,0,0" x:Name="AddButton" Width="70" Height="30" Content="Создать" FontSize="30" Background="Chartreuse" Click="AddButton_Click"/>
             <Button Margin="30,0,0,0" x:Name="MainButton" Width="70" Height="30" Content="Товары" FontSize="30" Background="Chartreuse" Click="MainButton_Click"/>
+            <Button Margin="30,0,0,0" x:Name="BackButton" Width="70" Height="30" Content="Назад" FontSize="30" Background="Chartreuse" Click="BackButton_Click"/>
         </StackPanel>
 
-        <ListBox x:Name="OrderList" Grid.Row="1">
+        <ListBox x:Name="OrderList" Grid.Row="1" HorizontalContentAlignment="Stretch">
             <ListBox.ContextMenu>
                 <ContextMenu>
                     <MenuItem Header="Редактировать" x:Name="ModButton" Click="ModButton_Click"/>

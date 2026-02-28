@@ -34,13 +34,14 @@ namespace Test.Page
             if (user != null)
             {
                 var us = con.People.Include(p => p.TypeRole).FirstOrDefault(u => u.PersonId == user.PersonId);
+                MessageBox.Show("Добро пожаловать!", "Успешный вход", MessageBoxButton.OK, MessageBoxImage.Information);
                 new MainWindow(us).Show();
                 Close();
             }
 
             else 
             {
-                MessageBox.Show("Невеные данные", "Ошибка", 
+                MessageBox.Show("Невеный логин или пароль", "Ошибка", 
                     MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
