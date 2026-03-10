@@ -110,6 +110,7 @@ namespace Test.Page
         {
             OpenFileDialog op = new OpenFileDialog();
             op.Title = "Изображение";
+            op.Filter = "Image|*.png;*.jpg";
             if (op.ShowDialog() == true) 
             {
                 imageBytes = File.ReadAllBytes(op.FileName);

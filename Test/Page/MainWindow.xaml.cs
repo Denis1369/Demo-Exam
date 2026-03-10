@@ -13,6 +13,7 @@ using System.Windows.Shapes;
 using Test.Card;
 using Test.Model;
 using Test.Page;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace Test
 {
@@ -139,49 +140,33 @@ namespace Test
             IEnumerable<Product> list = con.Products.Include(p => p.Manufacturer)
                     .Include(p => p.Supplier)
                     .Include(p => p.TypeBoots)
-                    .Include(p => p.TypeProduct).AsEnumerable();
+                    .Include(p => p.TypeProduct).AsQueryable();
 
             if (filtr != "Все") {
-                list = list.Where(p => p.Supplier.Title == filtr).AsEnumerable();
+                list = list.Where(p => p.Supplier.Title == filtr);
             }
 
-            List<Product> products = [];
-
-
-            if (SerchTextBox.Text != "")
+            if (!string.IsNullOrWhiteSpace(SerchTextBox.Text))
             {
-                foreach (var item in list)
-                {
-                    if (item.TypeBoots.Title.Contains(SerchTextBox.Text) ||
-                        item.Title.Contains(SerchTextBox.Text))
-                    {
-                        products.Add(item);
-                    }
-                }
-            }
-            else {
-                foreach (var item in list)
-                {
-                    products.Add(item);
-                }
+                string search = SerchTextBox.Text.ToLower();
+                list = list.Where(item => item.TypeBoots.Title.ToLower().Contains(search) ||
+                                            item.Title.ToLower().Contains(search));
             }
 
             switch (SortComboBox.SelectedValue)
             {
                 case "По возрастанию":
-                    products = products.OrderBy(i => i.Count).ToList();
+                    list = list.OrderBy(i => i.Count);
                     break;
                 case "По убыванию":
-                    products = products.OrderByDescending(i => i.Count).ToList();
+                    list = list.OrderByDescending(i => i.Count);
                     break;
                 }
 
-            foreach (var item in products) 
+            foreach (var item in list) 
             {
                 ProductList.Items.Add(new ProductCard(item));
             }
-
-
         }
 
         private void FilterComboBox_DropDownClosed(object sender, EventArgs e)

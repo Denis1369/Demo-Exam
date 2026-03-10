@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Test.Page"
         mc:Ignorable="d" Icon="/Data/Icon.ico"
-        Title="С" MinHeight="650" MinWidth="800" Background="Chartreuse">
+        Title="С" MinHeight="650" MinWidth="800">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -68,7 +68,7 @@
             Margin="20,0,0,0"
             Width="150"/>
             <Image x:Name="PhotoImage"
-           Source="{Binding Photo}"
+           Source="{Binding Photo, UpdateSourceTrigger=PropertyChanged}"
            Margin="20,0,0,0"
            Width="100"
            Height="100"/>

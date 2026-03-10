@@ -31,7 +31,7 @@
         <Label Grid.Column="1" Grid.Row="3" Content="{Binding CardSupplier}"/>
         <StackPanel Grid.Column="1" Grid.Row="4" Orientation="Horizontal">
             <Label Content="Цена: "/>
-            <TextBlock VerticalAlignment="Center"  x:Name="TextPrice" Text="{Binding Price}" Foreground="Red"/>
+            <TextBlock VerticalAlignment="Center" x:Name="TextPrice" Text="{Binding Price}" Foreground="Red"/>
             <Label Content="{Binding CadrPrice}"/>
         </StackPanel>
         <Label Grid.Column="1" Grid.Row="5" Content="{Binding CardUnit}"/>
